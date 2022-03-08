@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TableRow>
+
+        <EditText
+            android:id="@+id/cityName"
+            android:layout_width="match_parent"
+            android:hint="Enter city name"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:layout_weight="1"/>
+
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@android:drawable/ic_menu_search"/>
+
+    <ImageButton
+        android:id="@+id/history_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_menu_recent_history" />
+
+</TableRow>
+</TableLayout>
+
+    <TableLayout
+        android:id="@+id/firstTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="36sp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:text=" "
+                android:gravity="center_horizontal"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="60sp"
+                android:layout_weight="1"
+                android:text=" "
+                android:gravity="center_horizontal"/>
+
+        </TableRow>
+    </TableLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="10dp"
+        android:elevation="10dp">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="centerCrop"
+        />
+    </androidx.cardview.widget.CardView>
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#62A6E1">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/humidityIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/hhumidity" />
+
+            <TextView
+                android:id="@+id/Humidity"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:text="Humidity"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/humidityData"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/pressureIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/presssure" />
+
+            <TextView
+                android:id="@+id/Pressure"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Pressure"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pressureData"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/windIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/wind" />
+
+            <TextView
+                android:id="@+id/Wind"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Wind"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/windData"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+    </TableLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>
